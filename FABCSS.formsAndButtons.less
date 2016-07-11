@@ -1,0 +1,303 @@
+/**
+ * Fabricator forms and buttons styling
+ *
+ * @package FABCSS.formsAndButtons
+ * @author TJ Draper <tj@buzzingpixel.com>
+ * @version 1.0.0
+ */
+
+/**
+ * Variables
+ */
+@inputBackground: #fff;
+@inputBackgroundDisabled: lighten(#000, 96%);
+@inputColor: lighten(#000, 35%);
+@inputColorDisabled: lighten(#000, 45%);
+@inputPlaceholderColor: lighten(@inputColor, 40%);
+@inputFont: false;
+@inputFontSize: false;
+@inputBorderColor: lighten(#000, 90%);
+@inputBorderColorHover: darken(@inputBorderColor, 10%);
+@inputBorderColorFocus: darken(@inputBorderColor, 20%);
+@inputBorderWidth: 1px;
+@inputRounded: 0;
+@inputPaddingHorizontal: 16px;
+@inputPaddingVertical: 10px;
+@inputMarginBottom: 20px;
+@inputCursorDisabled: not-allowed;
+
+@textareaLineHeight: 1.3em;
+@textareaMinHeight: 80px;
+@textareaPaddingHorizontal: 16px;
+@textareaPaddingVertical: 10px;
+@textareaResize: vertical; // none, horizontal, vertical, both
+
+@labelFontWeight: normal;
+@labelLineHeight: 1.3em;
+@labelMarginBottom: 4px;
+@labelMarginRight: 10px;
+
+@buttonColor: #fff;
+@buttonBackground: lighten(#000, 45%);
+@buttonBackgroundHover: darken(@buttonBackground, 5%);
+@buttonBackgroundActive: darken(@buttonBackground, 10%);
+@buttonBorderColor: false;
+@buttonFont: false;
+@buttonFontSize: false;
+@buttonFontWeight: normal;
+@buttonMarginBottom: false;
+@buttonPaddingHorizontal: 30px;
+@buttonPaddingVertical: 13px;
+@buttonRounded: 3px;
+
+@coloredButtonBackground: #40EEFF;
+@coloredButtonBackgroundHover: darken(@coloredButtonBackground, 5%);
+@coloredButtonBackgroundActive: darken(@coloredButtonBackground, 10%);
+@coloredButtonColor: false;
+@coloredButtonBorderColor: false;
+
+@disabledButtonBackground: lighten(#000, 75%);
+@disabledButtonColor: lighten(#000, 45%);
+@disabledButtonCursor: not-allowed;
+
+/**
+ * Styling
+ */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+.input,
+.textarea,
+.select {
+	-webkit-appearance: none;
+	background-color: @inputBackground;
+	border-color: @inputBorderColor;
+	border-style: solid;
+	border-width: @inputBorderWidth;
+	border-radius: @inputRounded;
+	color: @inputColor;
+	margin-bottom: @inputMarginBottom;
+	outline: none;
+	padding-bottom: @inputPaddingVertical;
+	padding-left: @inputPaddingHorizontal;
+	padding-right: @inputPaddingHorizontal;
+	padding-top: @inputPaddingVertical;
+	width: 100%;
+
+	.inputFont () when not (@inputFont = false) {
+		font-family: @inputFont;
+	}
+	.inputFont();
+
+	.inputFontSize () when not (@inputFontSize = false) {
+		font-size: @inputFontSize;
+	}
+	.inputFontSize();
+
+	&:hover {
+		border-color: @inputBorderColorHover;
+	}
+	&:focus {
+		border-color: @inputBorderColorFocus;
+	}
+	&::-webkit-input-placeholder {
+		color: @inputPlaceholderColor;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color: @inputPlaceholderColor;
+	}
+	&::-moz-placeholder {  /* Firefox 19+ */
+		color: @inputPlaceholderColor;
+	}
+	&:-ms-input-placeholder {
+		color: @inputPlaceholderColor;
+	}
+	&:disabled {
+		background-color: @inputBackgroundDisabled;
+		color: @inputColorDisabled;
+		cursor: @inputCursorDisabled;
+	}
+	&--borderless {
+		border-color: @inputBackground;
+		&:hover,
+		&:focus {
+			border-color: @inputBackground;
+		}
+	}
+	&--inline {
+		display: inline-block;
+		margin-right: 6px;
+		width: auto;
+	}
+}
+.textarea {
+	line-height: @textareaLineHeight;
+	min-height: @textareaMinHeight;
+	padding-bottom: @textareaPaddingVertical;
+	padding-left: @textareaPaddingHorizontal;
+	padding-right: @textareaPaddingHorizontal;
+	padding-top: @textareaPaddingVertical;
+	resize: @textareaResize;
+}
+.label {
+	display: block;
+	font-weight: @labelFontWeight;
+	line-height: @labelLineHeight;
+	margin-bottom: @labelMarginBottom;
+	margin-right: @labelMarginRight;
+	&--inline {
+		display: inline-block;
+	}
+}
+.button {
+	-webkit-tap-highlight-color: @buttonColor;
+	text-align: center;
+	background-color: @buttonBackground;
+	border-radius: @buttonRounded;
+	color: @buttonColor;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: @buttonFontWeight;
+	line-height: 1em;
+	padding-bottom: @buttonPaddingVertical;
+	padding-left: @buttonPaddingHorizontal;
+	padding-right: @buttonPaddingHorizontal;
+	padding-top: @buttonPaddingVertical;
+	text-decoration: none !important;
+	text-shadow: none;
+
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+
+	.buttonBorder () when not (@buttonBorderColor = false) {
+		border: 2px solid @buttonBorderColor;
+	}
+	.buttonBorder();
+
+	.buttonFont () when not (@buttonFont = false) {
+		font-family: @buttonFont;
+	}
+	.buttonFont();
+
+	.buttonFontSize () when not (@buttonFontSize = false) {
+		font-size: @buttonFontSize;
+	}
+	.buttonFontSize();
+
+	.buttonMarginBottom when not (@buttonMarginBottom = false) {
+		margin-bottom: @buttonMarginBottom;
+	}
+	.buttonMarginBottom();
+
+	&:hover {
+		border-color: @buttonBackgroundHover;
+		background-color: @buttonBackgroundHover;
+		color: @buttonColor;
+	}
+	&:active {
+		background-color: @buttonBackgroundActive;
+	}
+	.check () when (@buttonBorderColor = false) {
+		border: 0;
+	}
+	.check();
+
+	&--colored {
+		background-color: @coloredButtonBackground;
+
+		.coloredButtonBorderColor () when not (@coloredButtonBorderColor = false) {
+			border-color: @coloredButtonBorderColor;
+		}
+		.coloredButtonBorderColor();
+
+		.coloredButtonColor () when not (@coloredButtonColor = false) {
+			color: @coloredButtonColor;
+		}
+		.coloredButtonColor();
+
+		&:hover {
+			border-color: @coloredButtonBackgroundHover;
+			background-color: @coloredButtonBackgroundHover;
+
+			.coloredButtonHoverColor () when not (@coloredButtonColor = false) {
+				color: @coloredButtonColor;
+			}
+			.coloredButtonHoverColor();
+		}
+		&:active {
+			background-color: @coloredButtonBackgroundActive;
+		}
+		&.button--outlined {
+			background: none;
+			background-color: none;
+			border-color: @coloredButtonBackground;
+			color: @coloredButtonBackground;
+			&:hover {
+				background-color: @coloredButtonBackground;
+				border-color: @coloredButtonBackground;
+				color: @buttonColor;
+			}
+			&:disabled,
+			&.button--disabled {
+				background-color: lighten(@disabledButtonBackground, 5%);
+				border-color: @disabledButtonBackground;
+				color: @disabledButtonColor;
+				&:hover {
+					background-color: lighten(@disabledButtonBackground, 5%);
+					border-color: @disabledButtonBackground;
+					color: @disabledButtonColor;
+				}
+			}
+		}
+	}
+	&--light {
+		background-color: lighten(@buttonBackground, 38%);
+		border-color: lighten(@buttonBackground, 38%);
+		color: @buttonBackground !important;
+		&:hover {
+			background-color: lighten(@buttonBackground, 28%);
+			border-color: lighten(@buttonBackground, 28%);
+		}
+	}
+	&--outlined {
+		background: none;
+		border-color: @buttonBackground;
+		border-style: solid;
+		border-width: 1px;
+		color: @buttonBackground;
+		&:hover {
+			border-color: @buttonBackground;
+			background-color: @buttonBackground;
+			color: @buttonColor;
+		}
+		&:disabled,
+		&--disabled {
+			background-color: lighten(@disabledButtonBackground, 5%);
+			border-color: lighten(@buttonBackground, 20%);
+			color: @disabledButtonColor;
+			&:hover {
+				background-color: lighten(@disabledButtonBackground, 5%);
+				border-color: lighten(@buttonBackground, 20%);
+				color: @disabledButtonColor;
+			}
+		}
+	}
+	&:disabled,
+	&--disabled {
+		background: @disabledButtonBackground;
+		border-color: @disabledButtonBackground;
+		color: @disabledButtonColor;
+		cursor: @disabledButtonCursor;
+		&:hover {
+			background: @disabledButtonBackground;
+			border-color: @disabledButtonBackground;
+			color: @disabledButtonColor;
+			cursor: @disabledButtonCursor;
+		}
+	}
+}
