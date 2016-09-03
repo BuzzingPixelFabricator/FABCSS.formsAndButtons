@@ -272,7 +272,7 @@ button:focus {
 		background-color: @coloredButtonBackgroundActive;
 	}
 }
-.button--colored .button--outlined {
+.button--colored.button--outlined {
 	background: none;
 	background-color: none;
 	border-color: @coloredButtonBackground;
@@ -316,7 +316,7 @@ button:focus {
 	}
 }
 .button--outlined:disabled,
-.button--outlined .button--disabled {
+.button--outlined.button--disabled {
 	background-color: lighten(@disabledButtonBackground, 5%);
 	border-color: lighten(@buttonBackground, 20%);
 	color: @disabledButtonColor;
