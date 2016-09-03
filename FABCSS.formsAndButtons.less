@@ -32,6 +32,9 @@
 @textareaPaddingVertical: 10px;
 @textareaResize: vertical; // none, horizontal, vertical, both
 
+@labelFontSize: false;
+@labelColor: lighten(#000, 30%);
+@labelFontStyle: italic;
 @labelFontWeight: normal;
 @labelLineHeight: 1.3em;
 @labelMarginBottom: 4px;
@@ -156,12 +159,18 @@ button:focus {
 	resize: @textareaResize;
 }
 .label {
+	color: @labelColor;
 	display: block;
+	font-style: @labelFontStyle;
 	font-weight: @labelFontWeight;
 	line-height: @labelLineHeight;
 	margin-bottom: @labelMarginBottom;
 	margin-right: @labelMarginRight;
 	min-width: 100%;
+	.labelFontSize () when not (@labelFontSize = false) {
+		font-size: @labelFontSize;
+	}
+	.labelFontSize();
 }
 .label--inline {
 	display: inline-block;
