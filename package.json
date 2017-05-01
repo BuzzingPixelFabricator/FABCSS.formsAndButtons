@@ -1,12 +1,12 @@
 {
-    "name": "fabcss.code",
+    "name": "fabcss.forms-and-buttons",
     "version": "1.1.0",
-    "description": "Fabricator code styling",
-    "homepage": "https://github.com/BuzzingPixelFabricator/fabcss.code",
-    "bugs": "https://github.com/BuzzingPixelFabricator/fabcss.code/issues",
+    "description": "Fabricator forms and buttons styling",
+    "homepage": "https://github.com/BuzzingPixelFabricator/FABCSS.formsAndButtons",
+    "bugs": "https://github.com/BuzzingPixelFabricator/FABCSS.formsAndButtons/issues",
     "repository": {
         "type": "git",
-        "url": "https://github.com/BuzzingPixelFabricator/fabcss.code.git"
+        "url": "https://github.com/BuzzingPixelFabricator/FABCSS.formsAndButtons.git"
     },
     "license": "Apache-2.0",
     "author": "BuzzingPixel, LLC",
@@ -18,7 +18,7 @@
     ],
     "fabricatorCssBuild": {
         "files": [
-            "src/FABCSS.code.less"
+            "src/FABCSS.formsAndButtons.less"
         ]
     }
 }
