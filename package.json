@@ -1,0 +1,24 @@
+{
+    "name": "fabcss.code",
+    "version": "1.1.0",
+    "description": "Fabricator code styling",
+    "homepage": "https://github.com/BuzzingPixelFabricator/fabcss.code",
+    "bugs": "https://github.com/BuzzingPixelFabricator/fabcss.code/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BuzzingPixelFabricator/fabcss.code.git"
+    },
+    "license": "Apache-2.0",
+    "author": "BuzzingPixel, LLC",
+    "contributors": [
+        {
+            "name": "TJ Draper",
+            "url": "https://buzzingpixel.com"
+        }
+    ],
+    "fabricatorCssBuild": {
+        "files": [
+            "src/FABCSS.code.less"
+        ]
+    }
+}
