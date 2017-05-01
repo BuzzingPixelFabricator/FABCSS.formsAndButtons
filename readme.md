@@ -59,6 +59,13 @@ Variables available in this file you can override:
 @buttonPaddingHorizontal: 30px;
 @buttonPaddingVertical: 13px;
 @buttonRounded: 3px;
+@buttonOutlinedBorderWidth: 1px;
+
+@lightButtonColor: #000;
+@lightButtonBackground: #fff;
+@lightButtonBackgroundHover: darken(@lightButtonBackground, 10%);
+@lightButtonBorderColor: false;
+@lightButtonBorderColorHover: false;
 
 @coloredButtonBackground: #40EEFF;
 @coloredButtonBackgroundHover: darken(@coloredButtonBackground, 5%);
