@@ -68,7 +68,7 @@
     --coloredButtonBackgroundHover: #26ecff;
     --coloredButtonBackgroundActive: #0de9ff;
     --coloredButtonColor: var(--buttonColor);
-    --coloredButtonBorderColor: var(--coloredButtonBackgroundHover);
+    --coloredButtonBorderColor: var(--coloredButtonBackground);
 
     --disabledButtonBackground: #bfbfbf;
     --disabledButtonBackgroundButtonColored: #cccccc;
@@ -258,6 +258,7 @@ button:focus {
 
 .button--colored:active {
     background-color: var(--coloredButtonBackgroundActive);
+    border-color: var(--coloredButtonBackgroundActive);
 }
 
 .button--colored.button--outlined {
